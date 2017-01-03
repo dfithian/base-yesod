@@ -1,0 +1,76 @@
+name: base-yesod
+version: '1.0'
+maintainer: Dan Fithian
+license: AllRightsReserved
+
+default-extensions:
+  - DataKinds
+  - DeriveDataTypeable
+  - DeriveGeneric
+  - EmptyDataDecls
+  - FlexibleContexts
+  - FlexibleInstances
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - LambdaCase
+  - MultiParamTypeClasses
+  - NamedFieldPuns
+  - NoImplicitPrelude
+  - NoMonomorphismRestriction
+  - OverloadedStrings
+  - PackageImports
+  - PolyKinds
+  - QuasiQuotes
+  - RankNTypes
+  - RecordWildCards
+  - ScopedTypeVariables
+  - StandaloneDeriving
+  - TemplateHaskell
+  - TupleSections
+  - TypeFamilies
+  - ViewPatterns
+
+ghc-options:
+  - -Wall
+  - -Werror
+  - -fwarn-tabs
+  - -threaded
+  - -O2
+  - -rtsopts
+  - -with-rtsopts=-N
+  - -with-rtsopts=-T
+
+dependencies:
+  - aeson
+  - base
+  - blaze-html
+  - classy-prelude
+  - conduit
+  - conduit-combinators
+  - conduit-extra
+  - containers
+  - http-types
+  - lens
+  - monad-control
+  - monad-logger
+  - mtl
+  - persistent
+  - persistent-postgresql
+  - persistent-template
+  - stm-chans
+  - text
+  - text-show
+  - wai-extra
+  - warp
+  - yesod
+  - yesod-core
+
+library:
+  source-dirs: "./."
+
+executables:
+  base-yesod:
+    main: main.hs
+    source-dirs: app
+    dependencies:
+      - base-yesod
